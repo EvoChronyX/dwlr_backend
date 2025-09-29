@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: groundwater-monitoring-backend
+    env: python
+    plan: free
+    region: oregon
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: uvicorn backend.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.6
+    healthCheckPath: /health
+    autoDeploy: true
+    disk:
+      name: persistent-data
+      mountPath: /opt/render/project/src/backend/data
+      sizeGB: 1

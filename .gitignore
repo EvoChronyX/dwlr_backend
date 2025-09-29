@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+reports/
+charts/
+exports/
+data/*.tmp
+data/uploads/
+*.log
