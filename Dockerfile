@@ -8,12 +8,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     && rm -rf /var/lib/apt/lists/*
 
-COPY backend/requirements.txt ./requirements.txt
+COPY requirements.txt ./requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY backend/ ./
-COPY groundwater_monitoring_system.py ./
-COPY train_dataset.csv ./data/train_dataset.csv
+COPY . ./
+RUN mkdir -p data && cp train_dataset.csv data/train_dataset.csv || echo "Dataset copy skipped"
 
 ENV PYTHONUNBUFFERED=1
 EXPOSE 8000
