@@ -48,7 +48,7 @@ class GroundwaterMonitoringSystem:
         self.df = None
         self.predictor = None
         self.feature_cols = ['Temperature_C', 'Rainfall_mm', 'pH', 'Dissolved_Oxygen_mg_L']
-        self.target_col = 'Water_Level_m'
+        self.target_col = 'Groundwater_Level_m'  # Updated to match training data
         self.rainfall_categories = {
             'Very Low': (0, 5),
             'Low': (5, 25),
