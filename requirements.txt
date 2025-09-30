@@ -1,14 +1,30 @@
+# Requirements for YOUR Advanced Groundwater Monitoring System
+# Based on groundwater_monitoring_interface.py with YOUR high-accuracy model
+
+# Core FastAPI dependencies
 fastapi==0.115.0
 uvicorn==0.30.6
 pydantic==2.9.2
+
+# Data processing and ML
 pandas==2.2.2
 numpy==1.26.4
+scikit-learn==1.5.2
+
+# YOUR exact ensemble model components
+tensorflow==2.15.0
+xgboost==2.1.1
+
+# Visualization and analysis
 matplotlib==3.9.2
 seaborn==0.13.2
-joblib==1.4.2
-scikit-learn==1.5.2
-xgboost==2.1.1
+
+# Backend utilities
 python-multipart==0.0.9
-reportlab==4.2.2
-jinja2==3.1.4
 python-dateutil==2.8.2
+joblib==1.4.2
+jinja2==3.1.4
+
+# Development
+pytest==7.4.3
+pytest-asyncio==0.21.1
